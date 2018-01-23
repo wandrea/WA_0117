@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DbUtil {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/januar15";
+    private static final String URL = "jdbc:postgresql://localhost:5432/dvdrental";
     private static final String User = "postgres";
     private static final String password = "postgres";
     private static DbUtil INSTANCE;

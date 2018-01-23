@@ -13,11 +13,18 @@ public class Main {
 
            connection=DbUtil.getInstance().getConnection();
             statement = connection.prepareStatement(SqlConstants.SELECTFILM_JOIN_ACTOR);
-           statement.setInt(1,5);
+           statement.setInt(1,199);
             rs = statement.executeQuery();
+            while (rs.next()){
+                FilmActor filmActor = new FilmActor(rs.getString("title"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"));
 
+                System.out.println(filmActor.toString());
 
-            while (rs.next()) {
+            }
+
+           /* while (rs.next()) {
                Actor actor = new Actor(rs.getInt("actor_id"),
                         rs.getString("first_name"),
                         rs.getString("last_name"),
@@ -25,7 +32,7 @@ public class Main {
 
                 System.out.println(actor.toString());
 
-            }
+            }*/
 
          /*   rs2 = statement.executeQuery("SELECT*FROM country");
            while (rs2.next()) {
